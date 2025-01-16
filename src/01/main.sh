@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ "$1" =~ [A-z] ]]
+if [[ "$1" =~ [A-Za-z] ]]
 then
 echo $1 
 else 

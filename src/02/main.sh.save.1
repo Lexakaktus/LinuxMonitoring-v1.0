@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "HOSTNAME =" $HOSTNAME
+echo "TIMEZONE = `cat /etc/timezone `  UTC ` date +\"%-:::z\" `"
+echo "USER = " $USER
+echo "OS = " `cat /etc/issue`
+echo "DATE = ` date +\"%d %B %Y %T\"` "
+echo "UPTIME = `uptime -p` "
+echo "UPTIME_SEC =  `awk '{print $1}' /proc/uptime` "
+ipper= $ (ip -o -4 addr show | tail -n 1 | awk '{print $4}')
+
+echo "IP = ` ip -o -4 a show| tail -n 1| awk '{print  $4, "("$2")"}' `  
+
+echo "MASK = `ipcalc $ipper | awk '/Netmask/ {print $2}'` "
