@@ -29,6 +29,8 @@ echo "Вы хотите сохранить данные в файл? Y/n"
 read answer
 if [[ "$answer" =~ [Yy] ]]
 then
-echo "$output" > tim
+echo "$output" > "$timsave"
+echo "Данные созранены в файл $timsave"
+else
+echo "Данные не сохранены"
 fi
-ls
