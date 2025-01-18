@@ -1,4 +1,5 @@
 #!/bin/bash
+output=$(
 echo "HOSTNAME =" $HOSTNAME
 echo "TIMEZONE = `cat /etc/timezone `  UTC ` date +\"%-:::z\" `"
 echo "USER = " $USER
@@ -18,7 +19,7 @@ echo "RAM_USED=$(free -m | awk '/^Mem:/ {printf "%.3f GB", ($2 - $7) / 1024}')"
 echo "RAM_FREE=$(free -m | awk '/^Mem:/ {printf "%.3f GB", $7 / 1024}')"
 echo "SPACE_ROOT=$(df / --block-size=M | awk '/\// {printf "%.2f MB", $2}')"
 echo "SPACE_ROOT_USED=$(df / --block-size=M | awk '/\// {printf "%.2f MB", $3}')"
-printf "SPACE_ROOT_FREE=$(df / --block-size=M | awk '/\// {printf "%.2f MB", $4}')"
-
+echo "SPACE_ROOT_FREE=$(df / --block-size=M | awk '/\// {printf "%.2f MB", $4}')"
+)
 
 
