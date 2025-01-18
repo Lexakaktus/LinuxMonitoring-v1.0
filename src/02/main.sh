@@ -1,11 +1,10 @@
 #!/bin/bash
+timsave=$( date +"%d_%m_%y_%H_%M_%S").status
 output=$(
 echo "HOSTNAME =" $HOSTNAME
 echo "TIMEZONE = `cat /etc/timezone `  UTC ` date +\"%-:::z\" `"
 echo "USER = " $USER
 echo "OS = " `cat /etc/issue`
-timsave=$( date +"%d_%m_%y_%H_%M_%S")
-timsave="${timsave}.status"
 echo "DATE = ` date +\"%d %B %Y %T\"` "
 echo "UPTIME = `uptime -p` "
 echo "UPTIME_SEC =  `awk '{print $1}' /proc/uptime` "
@@ -30,7 +29,7 @@ read answer
 if [[ "$answer" =~ [Yy] ]]
 then
 echo "$output" > "$timsave"
-echo "Данные созранены в файл $timsave"
+echo "Данные сохранены в файл $timsave"
 else
 echo "Данные не сохранены"
 fi
