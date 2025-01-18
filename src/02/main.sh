@@ -4,8 +4,8 @@ echo "HOSTNAME =" $HOSTNAME
 echo "TIMEZONE = `cat /etc/timezone `  UTC ` date +\"%-:::z\" `"
 echo "USER = " $USER
 echo "OS = " `cat /etc/issue`
-timsave= $( date +\"%d_%m_%y_%H_%M_%S\")
-echo ".status" >> "$timsave"
+timsave=$( date +"%d_%m_%y_%H_%M_%S")
+timsave="${timsave}.status"
 echo "DATE = ` date +\"%d %B %Y %T\"` "
 echo "UPTIME = `uptime -p` "
 echo "UPTIME_SEC =  `awk '{print $1}' /proc/uptime` "
@@ -27,6 +27,6 @@ echo "SPACE_ROOT_FREE=$(df / --block-size=M | awk '/\// {printf "%.2f MB", $4}')
 echo "$output"
 echo "Вы хотите сохранить данные в файл? Y/n"
 read answer
-if [[ "$name" =~ [Yy] ]]
+if [[ "$answer" =~ [Yy] ]]
 echo "$output" > tim
 ls
