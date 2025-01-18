@@ -29,4 +29,5 @@ echo "Вы хотите сохранить данные в файл? Y/n"
 read answer
 if [[ "$answer" =~ [Yy] ]]
 echo "$output" > tim
+fi
 ls
