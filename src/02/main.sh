@@ -27,7 +27,8 @@ echo "SPACE_ROOT_FREE=$(df / --block-size=M | awk '/\// {printf "%.2f MB", $4}')
 echo "$output"
 echo "Вы хотите сохранить данные в файл? Y/n"
 read answer
-if [[ "$answer" =~ [Yy] ]] then
+if [[ "$answer" =~ [Yy] ]]
+then
 echo "$output" > tim
 fi
 ls
