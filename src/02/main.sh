@@ -22,4 +22,5 @@ echo "SPACE_ROOT_USED=$(df / --block-size=M | awk '/\// {printf "%.2f MB", $3}')
 echo "SPACE_ROOT_FREE=$(df / --block-size=M | awk '/\// {printf "%.2f MB", $4}')"
 )
 
-
+echo "$output"
+echo "Вы хотите сохранить данные в файл? Y/n"
