@@ -4,7 +4,7 @@ echo "HOSTNAME =" $HOSTNAME
 echo "TIMEZONE = `cat /etc/timezone `  UTC ` date +\"%-:::z\" `"
 echo "USER = " $USER
 echo "OS = " `cat /etc/issue`
-timsave= ` date +\"%d_%m_%y_%T\"`
+timsave= ` date +\"%d_%m_%y_%H_%M_%S\"`
 echo ".status" >> "$timsave"
 echo "DATE = ` date +\"%d %B %Y %T\"` "
 echo "UPTIME = `uptime -p` "
