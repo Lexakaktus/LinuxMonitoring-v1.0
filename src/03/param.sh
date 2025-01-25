@@ -37,4 +37,37 @@ case "$2" in
         back="\033[40m" ;;
 
 esac
-echo -e " ${signs}${back}hjkkbfs${signs}${back} "
+case "$3" in
+    1)
+        signs1="\033[97m" ;;
+    2)
+        signs1="\033[91m" ;;
+    3)
+        signs1="\033[92m" ;;
+    4)
+        signs1="\033[94m" ;;
+    5)
+        signs1="\033[35m" ;;
+    6)
+        signs1="\033[30m" ;;
+
+esac
+
+case "$4" in
+    1)
+        back1="\033[107m" ;;
+    2)
+        back1="\033[101m" ;;
+    3)
+        back1="\033[41m" ;;
+    4)
+        back1="\033[104m" ;;
+    5)
+        back1="\033[45m" ;;
+    6)
+        back1="\033[40m" ;;
+
+esac
+# echo -e " ${signs}${back}hjkkbfs\033[0m  ${signs1}${back1}ерцак24пц\033[0m"
+chmod +x info.sh
+bash ./info.sh ${signs}${back} ${signs1}${back1}
