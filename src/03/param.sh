@@ -21,4 +21,4 @@ case "$1" in
         signs=\033[30m ;;
 
 esac
-echo -e " ${signs} hjkkbfs ${signs} \033[0m "
+echo " ${signs} hjkkbfs ${signs} \033[0m "
