@@ -21,4 +21,20 @@ case "$1" in
         signs="\033[30m" ;;
 
 esac
-echo " ${signs}hjkkbfs${signs} "
+
+case "$2" in
+    1)
+        back="\033[107m" ;;
+    2)
+        back="\033[101m" ;;
+    3)
+        back="\033[41m" ;;
+    4)
+        back="\033[104m" ;;
+    5)
+        back="\033[45m" ;;
+    6)
+        back="\033[40m" ;;
+
+esac
+echo -e " ${signs}${back}hjkkbfs${signs}${back} "
