@@ -12,11 +12,11 @@ default_column1_font_color=1   # Белый
 default_column2_background=2   # Красный
 default_column2_font_color=4   # Синий
 
+CONFIG_FILE="config.conf"
+
 if [[ -f "$CONFIG_FILE" ]]; then
     source "$CONFIG_FILE"
 fi
-
-
 
 get_sign_color() {
     case "$1" in
@@ -29,7 +29,6 @@ get_sign_color() {
         *) echo "\033[0m"  ;;  
     esac
 }
-
 
 get_background_color() {
     case "$1" in
@@ -53,12 +52,10 @@ back=$(get_background_color "$column1_background2")
 signs1=$(get_sign_color "$column2_font_color")
 back1=$(get_background_color "$column2_background")
 
-
 chmod +x info.sh
 bash ./info.sh "${signs}${back}" "${signs1}${back1}"
 
 echo ""
-
 echo "Column 1 background = ${column1_background:-default} ($(get_background_color "$column1_background"))"
 echo "Column 1 font color = ${column1_font_color:-default} ($(get_sign_color "$column1_font_color"))"
 echo "Column 2 background = ${column2_background:-default} ($(get_background_color "$column2_background"))"
