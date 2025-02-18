@@ -42,6 +42,17 @@ get_background_color() {
     esac
 }
 
+name_color() {
+    case "$1" in
+    "\033[97m"|"\033[107m") echo "white" ;;
+    "\033[91m"|"\033[101m") echo "red" ;;
+    "\033[92m"|"\033[41m" ) echo "green" ;;
+    "\033[94m"|"\033[104m") echo "blue" ;;
+    "\033[35m"|"\033[45m" ) echo "purple" ;;
+    "\033[30m"|"\033[40m" ) echo "black" ;;
+
+    esac
+}
 column1_font_color=${column1_font_color:-$default_column1_font_color}
 column1_background=${column1_background:-$default_column1_background}
 column2_font_color=${column2_font_color:-$default_column2_font_color}
