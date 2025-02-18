@@ -52,7 +52,7 @@ then
   echo "Saving data to $filename..."
 
   cat <<EOF > "$filename"
-HOSTNAME = $hostname
+HOSTNAME = $HOSTNAME
 TIMEZONE = $timezone UTC $(date +"%z")
 USER = $user
 OS = $os
