@@ -42,6 +42,33 @@ get_background_color() {
     esac
 }
 
+# name_color() {
+#     case "$1" in
+#     "\033[97m"|"\033[107m") echo "white" ;;
+#     "\033[91m"|"\033[101m") echo "red" ;;
+#     "\033[92m"|"\033[41m" ) echo "green" ;;
+#     "\033[94m"|"\033[104m") echo "blue" ;;
+#     "\033[35m"|"\033[45m" ) echo "purple" ;;
+#     "\033[30m"|"\033[40m" ) echo "black" ;;
+
+#     esac
+# }
+
+name_color() {
+
+    case "$1" in
+        1) echo "white" ;;
+        2) echo "red" ;;
+        3) echo "green" ;;
+        4) echo "blue" ;;
+        5) echo "purple" ;;
+        6) echo "black" ;;
+        *) echo  "default" ;;
+    esac
+}
+# 
+# 
+# 
 column1_font_color=${column1_font_color:-$default_column1_font_color}
 column1_background=${column1_background:-$default_column1_background}
 column2_font_color=${column2_font_color:-$default_column2_font_color}
@@ -56,7 +83,7 @@ chmod +x info.sh
 bash ./info.sh "${signs}${back}" "${signs1}${back1}"
 
 echo ""
-echo "Column 1 background = ${column1_background:-default} ($(get_background_color "$column1_background"))"
-echo "Column 1 font color = ${column1_font_color:-default} ($(get_sign_color "$column1_font_color"))"
-echo "Column 2 background = ${column2_background:-default} ($(get_background_color "$column2_background"))"
-echo "Column 2 font color = ${column2_font_color:-default} ($(get_sign_color "$column2_font_color"))"
+echo "Column 1 background = ${column1_background:-default} ($(name_color "$column1_background"))"
+echo "Column 1 font color = ${column1_font_color:-default} ($(name_color "$column1_font_color"))"
+echo "Column 2 background = ${column2_background:-default} ($(name_color "$column2_background"))"
+echo "Column 2 font color = ${column2_font_color:-default} ($(name_color "$column2_font_color"))"

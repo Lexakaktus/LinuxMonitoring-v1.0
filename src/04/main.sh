@@ -11,7 +11,6 @@ then
 # script
 chmod +x param.sh 
 bash param.sh 
-fi
 else 
 echo "скрипт запускается без параметров"
 fi
