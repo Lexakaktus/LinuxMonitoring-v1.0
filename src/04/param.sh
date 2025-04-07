@@ -70,6 +70,11 @@ name_color() {
 # 
 #
 
+column1_font_color=${column1_font_color:-$default_column1_font_color}
+column1_background=${column1_background:-$default_column1_background}
+column2_font_color=${column2_font_color:-$default_column2_font_color}
+column2_background=${column2_background:-$default_column2_background}
+
 
 #name=$(echo -e "Column 1 background = ${column1_background:-default} ($(name_color "$column1_background"))\
 #Column 1 font color = ${column1_font_color:-default} ($(name_color "$column1_font_color")) \n Column 2 background = ${column2_background:-default} ($(name_color "$column2_background"))\nColumn 2 font color = ${column2_font_color:-default} ($(name_color "$column2_font_color"))")
