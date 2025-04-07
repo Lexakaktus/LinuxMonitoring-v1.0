@@ -71,8 +71,12 @@ name_color() {
 #
 
 
-name=$(echo -e "Column 1 background = ${column1_background:-default} ($(name_color "$column1_background"))\
-Column 1 font color = ${column1_font_color:-default} ($(name_color "$column1_font_color")) \n Column 2 background = ${column2_background:-default} ($(name_color "$column2_background"))\nColumn 2 font color = ${column2_font_color:-default} ($(name_color "$column2_font_color"))")
+#name=$(echo -e "Column 1 background = ${column1_background:-default} ($(name_color "$column1_background"))\
+#Column 1 font color = ${column1_font_color:-default} ($(name_color "$column1_font_color")) \n Column 2 background = ${column2_background:-default} ($(name_color "$column2_background"))\nColumn 2 font color = ${column2_font_color:-default} ($(name_color "$column2_font_color"))")
+name="Column 1 background = ${column1_background:-default} ($(name_color "$column1_background")) \n
+Column 1 font color = ${column1_font_color:-default} ($(name_color "$column1_font_color")) \n
+Column 2 background = ${column2_background:-default} ($(name_color "$column2_background")) \n
+Column 2 font color = ${column2_font_color:-default} ($(name_color "$column2_font_color"))\n " 
 
 
 
@@ -83,14 +87,14 @@ column2_font_color=${column2_font_color:-$default_column2_font_color}
 column2_background=${column2_background:-$default_column2_background}
 
 signs=$(get_sign_color "$column1_font_color")
-back=$(get_background_color "$column1_background2")
+back=$(get_background_color "$column1_background")
 signs1=$(get_sign_color "$column2_font_color")
 back1=$(get_background_color "$column2_background")
 
 chmod +x info.sh
 bash ./info.sh "${signs}${back}" "${signs1}${back1}"
 
-echo $name
+echo -e  $name
 # echo ""
 # echo "Column 1 background = ${column1_background:-default} ($(name_color "$column1_background"))"
 # echo "Column 1 font color = ${column1_font_color:-default} ($(name_color "$column1_font_color"))"
