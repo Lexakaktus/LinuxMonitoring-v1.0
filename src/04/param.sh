@@ -42,19 +42,7 @@ get_background_color() {
     esac
 }
 
-<<<<<<< HEAD
-name_color() {
-    case "$1" in
-    "\033[97m"|"\033[107m") echo "white" ;;
-    "\033[91m"|"\033[101m") echo "red" ;;
-    "\033[92m"|"\033[41m" ) echo "green" ;;
-    "\033[94m"|"\033[104m") echo "blue" ;;
-    "\033[35m"|"\033[45m" ) echo "purple" ;;
-    "\033[30m"|"\033[40m" ) echo "black" ;;
 
-    esac
-}
-=======
 # name_color() {
 #     case "$1" in
 #     "\033[97m"|"\033[107m") echo "white" ;;
@@ -80,9 +68,15 @@ name_color() {
     esac
 }
 # 
-# 
-# 
->>>>>>> f23019ceaca2ed7373beb8a8e5ed91855efdebf2
+#
+
+
+name=$(echo -e "Column 1 background = ${column1_background:-default} ($(name_color "$column1_background"))\
+Column 1 font color = ${column1_font_color:-default} ($(name_color "$column1_font_color")) \n Column 2 background = ${column2_background:-default} ($(name_color "$column2_background"))\nColumn 2 font color = ${column2_font_color:-default} ($(name_color "$column2_font_color"))")
+
+
+
+
 column1_font_color=${column1_font_color:-$default_column1_font_color}
 column1_background=${column1_background:-$default_column1_background}
 column2_font_color=${column2_font_color:-$default_column2_font_color}
@@ -96,8 +90,9 @@ back1=$(get_background_color "$column2_background")
 chmod +x info.sh
 bash ./info.sh "${signs}${back}" "${signs1}${back1}"
 
-echo ""
-echo "Column 1 background = ${column1_background:-default} ($(name_color "$column1_background"))"
-echo "Column 1 font color = ${column1_font_color:-default} ($(name_color "$column1_font_color"))"
-echo "Column 2 background = ${column2_background:-default} ($(name_color "$column2_background"))"
-echo "Column 2 font color = ${column2_font_color:-default} ($(name_color "$column2_font_color"))"
+echo $name
+# echo ""
+# echo "Column 1 background = ${column1_background:-default} ($(name_color "$column1_background"))"
+# echo "Column 1 font color = ${column1_font_color:-default} ($(name_color "$column1_font_color"))"
+# echo "Column 2 background = ${column2_background:-default} ($(name_color "$column2_background"))"
+# echo "Column 2 font color = ${column2_font_color:-default} ($(name_color "$column2_font_color"))"
