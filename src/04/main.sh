@@ -9,8 +9,9 @@
 if [[ "$#" -eq 0 ]]
 then
 # script
-chmod +x param.sh 
-bash param.sh 
+dir=$(dirname "$0")
+# chmod +x param.sh 
+bash $dir/param.sh 
 else 
 echo "скрипт запускается без параметров"
 fi

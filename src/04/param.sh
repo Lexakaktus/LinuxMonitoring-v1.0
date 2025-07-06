@@ -96,8 +96,9 @@ back=$(get_background_color "$column1_background")
 signs1=$(get_sign_color "$column2_font_color")
 back1=$(get_background_color "$column2_background")
 
-chmod +x info.sh
-bash ./info.sh "${signs}${back}" "${signs1}${back1}"
+# chmod +x info.sh
+dir=$(dirname "$0")
+bash $dir/info.sh "${signs}${back}" "${signs1}${back1}"
 
 echo -e  $name
 # echo ""
