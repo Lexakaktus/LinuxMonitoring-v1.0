@@ -11,7 +11,7 @@ then
 # script
 dir=$(dirname "$0")
 # chmod +x param.sh 
-bash $dir/param.sh 
+ $dir/./param.sh 
 else 
 echo "скрипт запускается без параметров"
 fi
